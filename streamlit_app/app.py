@@ -4,6 +4,7 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 import torch
 import pandas as pd
+#pandas
 
 # Set up page configuration and CSS.
 st.set_page_config(page_title="Job Posting Search Engine", layout="centered")
