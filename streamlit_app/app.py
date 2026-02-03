@@ -172,7 +172,7 @@ if st.session_state.app_state == "similar_jobs" and st.session_state.selected_jo
         st.session_state.selected_job = None
         # Transition back to "results" without wiping the search query.
         st.session_state.app_state = "results"
-        st.rerun()
+        st.experimental_rerun()
 else:
   
     user_input = st.text_input(
@@ -228,7 +228,7 @@ else:
                 if st.button("Show most similar jobs", key=f"default_{job_index}"):
                     st.session_state.selected_job = job_index
                     st.session_state.app_state = "similar_jobs"
-                    st.rerun()
+                    st.experimental_rerun()
             with col_finetuned:
                 job_index = top10_finetuned[i].item()
                 st.write(f"**{job_postings[job_index]}**")
@@ -236,6 +236,6 @@ else:
                 if st.button("Show most similar jobs", key=f"finetuned_{job_index}"):
                     st.session_state.selected_job = job_index
                     st.session_state.app_state = "similar_jobs"
-                    st.rerun()
+                    st.experimental_rerun()
     else:
         st.info("Please enter a job title to start searching.")
